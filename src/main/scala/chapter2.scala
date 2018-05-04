@@ -14,4 +14,10 @@ object chapter2 {
   // and return a partially applied function of one argument
 
   def curry[A,B,C](f: (A, B) => C): A => (B => C) = ???
+
+  // Exercise 4
+  // write a function to take a function of one argument that returns a function of one argument
+  // and return a function of two arguments
+
+  def uncurry[A,B,C](f: A => B => C): (A, B) => C = ???
 }
