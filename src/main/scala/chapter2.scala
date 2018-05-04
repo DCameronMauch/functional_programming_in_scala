@@ -21,4 +21,12 @@ object chapter2 {
   def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
     as.zip(as.drop(1)).forall { case (left, right) => ordered(left, right) }
   }
+
+  // Exercise 3
+  // write function to take function of two arguments, and return a function of one argument
+  // and return a partially applied function of one argument
+
+  def curry[A,B,C](f: (A, B) => C): A => (B => C) = {
+    a: A => b: B => f(a, b)
+  }
 }
