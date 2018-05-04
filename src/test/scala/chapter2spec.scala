@@ -26,7 +26,7 @@ class chapter2spec extends FunSpec with Matchers{
           isSorted(Array(1, 2, 3), f) shouldBe true
         }
 
-        it("shoudl return false for unordered array") {
+        it("should return false for unordered array") {
           isSorted(Array(1, 3, 2), f) shouldBe false
         }
       }
@@ -38,7 +38,7 @@ class chapter2spec extends FunSpec with Matchers{
           isSorted(Array(1.1, 2.2, 3.3), f) shouldBe true
         }
 
-        it("shoudl return false for unordered array") {
+        it("should return false for unordered array") {
           isSorted(Array(1.1, 3,3, 2.2), f) shouldBe false
         }
       }
@@ -50,7 +50,7 @@ class chapter2spec extends FunSpec with Matchers{
           isSorted(Array("abc", "def", "ghi"), f) shouldBe true
         }
 
-        it("shoudl return false for unordered array") {
+        it("should return false for unordered array") {
           isSorted(Array("abc", "ghi", "def"), f) shouldBe false
         }
       }
@@ -78,6 +78,17 @@ class chapter2spec extends FunSpec with Matchers{
       it("should return false for unordered array") {
         isSorted(Array("AbC", "GhI", "dEf"), f) shouldBe false
       }
+    }
+  }
+
+  describe("curry") {
+    def f(x: Int, y: Int) = x * y
+    val curried = curry(f)
+    val partial = curried(3)
+
+    it("should return product of arguments") {
+      partial(3) shouldEqual 9
+      partial(7) shouldEqual 27
     }
   }
 }

@@ -8,4 +8,10 @@ object chapter2 {
   // check if array of type A is sorted given an ordering function
 
   def isSorted[A](as: Array[A], ordered: (A,A) => Boolean): Boolean = ???
+
+  // Exercise 3
+  // write function to take function of two arguments, and return a function of one argument
+  // and return a partially applied function of one argument
+
+  def curry[A,B,C](f: (A, B) => C): A => (B => C) = ???
 }
