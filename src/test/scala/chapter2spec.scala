@@ -16,4 +16,47 @@ class chapter2spec extends FunSpec with Matchers{
       fib(9) shouldEqual 34
     }
   }
+
+  describe("isSorted") {
+    describe("by less than") {
+      describe("int list") {
+        val f: (Int, Int) => Boolean = _ <= _
+
+        it("should return true for ascending ordered lists") {
+          isSorted(Array(1, 2, 3), f) shouldBe true
+          isSorted(Array(1, 3, 2), f) shouldBe false
+        }
+      }
+
+      describe("double list") {
+        val f: (Double, Double) => Boolean = _ <= _
+
+        it("should return true for ascending ordered lists") {
+          isSorted(Array(1.1, 2.2, 3.3), f) shouldBe true
+          isSorted(Array(1.1, 3,3, 2.2), f) shouldBe false
+        }
+      }
+
+      describe("string list") {
+        val f: (String, String) => Boolean = _ <= _
+
+        it("should return true for ascending ordered lists") {
+          isSorted(Array("abc", "def", "ghi"), f) shouldBe true
+          isSorted(Array("abc", "ghi", "def"), f) shouldBe false
+        }
+      }
+    }
+
+    describe("by greater than") {
+      describe("int list") {
+        val f: (Int, Int) => Boolean = _ >= _
+
+        it("should return true for ascending ordered lists") {
+          isSorted(Array(3, 2, 1), f) shouldBe true
+          isSorted(Array(3, 1, 2), f) shouldBe false
+        }
+      }
+
+    }
+  }
 }
