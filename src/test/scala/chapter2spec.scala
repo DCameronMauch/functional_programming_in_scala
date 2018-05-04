@@ -86,9 +86,19 @@ class chapter2spec extends FunSpec with Matchers{
     val curried = curry(f)
     val partial = curried(3)
 
-    it("should return product of arguments") {
+    it("should return product of argument and 3") {
       partial(3) shouldEqual 9
       partial(7) shouldEqual 21
+    }
+  }
+
+  describe("uncurry") {
+    def f(x: Int)(y: Int) = x * y
+    val uncurried = uncurry(f)
+
+    it("should return product of arguments") {
+      uncurried(3, 3) shouldEqual 9
+      uncurried(3, 7) shouldEqual 21
     }
   }
 }

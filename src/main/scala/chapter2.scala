@@ -29,4 +29,12 @@ object chapter2 {
   def curry[A,B,C](f: (A, B) => C): A => (B => C) = {
     a: A => b: B => f(a, b)
   }
+
+  // Exercise 4
+  // write a function to take a function of one argument that returns a function of one argument
+  // and return a function of two arguments
+
+  def uncurry[A,B,C](f: A => B => C): (A, B) => C = {
+    (a: A, b: B) => f(a)(b)
+  }
 }
