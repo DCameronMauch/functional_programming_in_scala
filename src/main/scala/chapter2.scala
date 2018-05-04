@@ -37,4 +37,12 @@ object chapter2 {
   def uncurry[A,B,C](f: A => B => C): (A, B) => C = {
     (a: A, b: B) => f(a)(b)
   }
+
+  // Exercise 5
+  // write a function to take two functions of one argument
+  // and return a composed function of one argument
+
+  def compose[A,B,C](f: B => C, g: A => B): A => C = {
+    a: A => f(g(a))
+  }
 }
