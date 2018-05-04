@@ -19,44 +19,65 @@ class chapter2spec extends FunSpec with Matchers{
 
   describe("isSorted") {
     describe("by less than") {
-      describe("int list") {
+      describe("int") {
         val f: (Int, Int) => Boolean = _ <= _
 
-        it("should return true for ascending ordered lists") {
+        it("should return true for ascending ordered array") {
           isSorted(Array(1, 2, 3), f) shouldBe true
+        }
+
+        it("shoudl return false for unordered array") {
           isSorted(Array(1, 3, 2), f) shouldBe false
         }
       }
 
-      describe("double list") {
+      describe("double") {
         val f: (Double, Double) => Boolean = _ <= _
 
-        it("should return true for ascending ordered lists") {
+        it("should return true for ascending ordered array") {
           isSorted(Array(1.1, 2.2, 3.3), f) shouldBe true
+        }
+
+        it("shoudl return false for unordered array") {
           isSorted(Array(1.1, 3,3, 2.2), f) shouldBe false
         }
       }
 
-      describe("string list") {
+      describe("string") {
         val f: (String, String) => Boolean = _ <= _
 
-        it("should return true for ascending ordered lists") {
+        it("should return true for ascending ordered array") {
           isSorted(Array("abc", "def", "ghi"), f) shouldBe true
+        }
+
+        it("shoudl return false for unordered array") {
           isSorted(Array("abc", "ghi", "def"), f) shouldBe false
         }
       }
     }
 
-    describe("by greater than") {
-      describe("int list") {
-        val f: (Int, Int) => Boolean = _ >= _
+    describe("by greater than int") {
+      val f: (Int, Int) => Boolean = _ >= _
 
-        it("should return true for ascending ordered lists") {
-          isSorted(Array(3, 2, 1), f) shouldBe true
-          isSorted(Array(3, 1, 2), f) shouldBe false
-        }
+      it("should return true for descending ordered array") {
+        isSorted(Array(3, 2, 1), f) shouldBe true
       }
 
+      it("should return false for unordered array") {
+        isSorted(Array(3, 1, 2), f) shouldBe false
+      }
+    }
+
+    describe("by less than lower cased string") {
+      val f: (String, String) => Boolean = _.toLowerCase <= _.toLowerCase
+
+      it("should return true for ascending ordered array") {
+        isSorted(Array("AbC", "dEf", "GhI"), f) shouldBe true
+      }
+
+      it("should return false for unordered array") {
+        isSorted(Array("AbC", "GhI", "dEf"), f) shouldBe false
+      }
     }
   }
 }
