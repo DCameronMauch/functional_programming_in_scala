@@ -1,5 +1,7 @@
 package chapter3
 
+import scala.annotation.tailrec
+
 sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
@@ -64,4 +66,10 @@ object List {
   // write a length function that uses the foldRight function
 
   def length[A](as: List[A]): Int = ???
+
+  // Exercise 10
+  // write a foldLeft function that uses tail recursion
+
+  @tailrec
+  def foldLeft[A,B](as: List[A], z: B)(f: (B, A) => B): B = ???
 }
