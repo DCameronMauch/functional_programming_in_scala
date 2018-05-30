@@ -1,7 +1,9 @@
-import chapter2._
+package chapter2
+
+import exercises._
 import org.scalatest._
 
-class chapter2spec extends FunSpec with Matchers{
+class chapter2spec extends FunSpec with Matchers {
   describe("fib") {
     it("should return correct values") {
       fib(0) shouldEqual 0
