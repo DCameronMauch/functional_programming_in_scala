@@ -59,4 +59,9 @@ object List {
   // write a init function to return list with last element removed
 
   def init[A](l: List[A]): List[A] = ???
+
+  // Exercise 9
+  // write a length function that uses the foldRight function
+
+  def length[A](as: List[A]): Int = ???
 }

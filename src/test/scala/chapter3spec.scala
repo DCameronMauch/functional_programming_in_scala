@@ -100,5 +100,19 @@ class chapter3spec extends FunSpec with Matchers {
         }
       }
     }
+
+    describe("length") {
+      describe("empty list") {
+        it("should return 0") {
+          chapter3.List.length(chapter3.Nil) shouldEqual 0
+        }
+      }
+
+      describe("non-empty list") {
+        it("should return 3") {
+          chapter3.List.length(chapter3.List("a", "b", "c")) shouldEqual 3
+        }
+      }
+    }
   }
 }
