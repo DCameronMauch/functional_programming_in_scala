@@ -8,7 +8,7 @@ class chapter3spec extends FunSpec with Matchers {
     describe("tail") {
       describe("list of int") {
         it("should return tail of list") {
-          tail(chapter3.List(1, 2, 3)) shouldEqual chapter3.List(2,3)
+          tail(chapter3.List(1, 2, 3)) shouldEqual chapter3.List(2, 3)
         }
       }
 
@@ -30,6 +30,7 @@ class chapter3spec extends FunSpec with Matchers {
         it("should return tail of list") {
           setHead(chapter3.List(1, 2, 3), 4) shouldEqual chapter3.List(4, 2, 3)
         }
+
       }
 
       describe("list of string") {
@@ -77,6 +78,26 @@ class chapter3spec extends FunSpec with Matchers {
             val f = (x: String) => x != "c"
             dropWhile(chapter3.List("a", "b", "c", "d"), f) shouldEqual chapter3.List("c", "d")
           }
+        }
+      }
+    }
+
+    describe("init") {
+      describe("list of int") {
+        it("should return tail of list") {
+          init(chapter3.List(1, 2, 3)) shouldEqual chapter3.List(1, 2)
+        }
+      }
+
+      describe("list of string") {
+        it("should return tail of list") {
+          init(chapter3.List("a", "b", "c")) shouldEqual chapter3.List("a", "b")
+        }
+      }
+
+      describe("empty list") {
+        it("should return empty list") {
+          init(chapter3.Nil) shouldEqual chapter3.Nil
         }
       }
     }
