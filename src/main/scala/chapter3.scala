@@ -72,5 +72,9 @@ object List {
   // Exercise 6
   // write a init function to return list with last element removed
 
-  def init[A](l: List[A]): List[A] = ???
+  def init[A](l: List[A]): List[A] = l match {
+    case Nil => Nil
+    case Cons(_, Nil) => Nil
+    case Cons(x, xs) => Cons(x, init(xs))
+  }
 }
