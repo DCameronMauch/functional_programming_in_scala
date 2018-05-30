@@ -1,4 +1,6 @@
-object chapter2 {
+package chapter2
+
+object exercises {
   // Exercise 1
   // calculate nth Fibonacci number using a local an annotated tail-recursive function
 
