@@ -63,7 +63,7 @@ object List {
   def init[A](l: List[A]): List[A] = ???
 
   // Exercise 9
-  // write a length function that uses the foldRight function
+  // write a length function that using foldRight
 
   def length[A](as: List[A]): Int = ???
 
@@ -72,4 +72,15 @@ object List {
 
   @tailrec
   def foldLeft[A,B](as: List[A], z: B)(f: (B, A) => B): B = ???
+
+  // Exercise 11
+  // write a sum3 function to add together list of int using foldLeft
+  // write a product3 function to multiply together list of double using foldLeft
+  // write a length2 function using FoldLeft
+
+  def sum3(ints: List[Int]): Int = ???
+
+  def product3(ds: List[Double]): Double = ???
+
+  def length2[A](as: List[A]): Int = ???
 }

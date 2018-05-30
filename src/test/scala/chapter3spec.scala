@@ -129,5 +129,47 @@ class chapter3spec extends FunSpec with Matchers {
         }
       }
     }
+
+    describe("sum3") {
+      describe("empty list") {
+        it("should return 0") {
+          sum3(chapter3.Nil) shouldEqual 0
+        }
+      }
+
+      describe("non-empty list") {
+        it("should return 6") {
+          sum3(chapter3.List(1, 2, 3)) shouldEqual 6
+        }
+      }
+    }
+
+    describe("product3") {
+      describe("empty list") {
+        it("should return 1.0") {
+          product3(chapter3.Nil) shouldEqual 1.0
+        }
+      }
+
+      describe("non-empty list") {
+        it("should return 6,6") {
+          product3(chapter3.List(1.1, 2.2, 3.3)) shouldEqual 6.6
+        }
+      }
+    }
+
+    describe("length2") {
+      describe("empty list") {
+        it("should return 0") {
+          length2(chapter3.Nil) shouldEqual 0
+        }
+      }
+
+      describe("non-empty list") {
+        it("should return 3") {
+          length2(chapter3.List("a", "b", "c")) shouldEqual 3
+        }
+      }
+    }
   }
 }
