@@ -119,13 +119,13 @@ class chapter3spec extends FunSpec with Matchers {
     describe("foldLeft") {
       describe("list of int - sum") {
         it("should return 6") {
-          foldLeft(chapter3.List(1, 2, 3), 0)((e, acc) => acc + e) shouldEqual 6
+          foldLeft(chapter3.List(1, 2, 3), 0)((acc, e) => acc + e) shouldEqual 6
         }
       }
 
       describe("list of string - concat") {
         it("should return abc") {
-          foldLeft(chapter3.List("a", "b", "c"), "")((e, acc) => acc + e) shouldEqual "abc"
+          foldLeft(chapter3.List("a", "b", "c"), "")((acc, e) => acc + e) shouldEqual "abc"
         }
       }
     }
