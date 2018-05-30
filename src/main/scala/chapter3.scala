@@ -81,5 +81,6 @@ object List {
   // Exercise 9
   // write a length function that uses the foldRight function
 
-  def length[A](as: List[A]): Int = ???
+  def length[A](as: List[A]): Int =
+    foldRight(as, 0)((_, acc) => acc + 1)
 }
