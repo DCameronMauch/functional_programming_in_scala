@@ -83,4 +83,9 @@ object List {
   def product3(ds: List[Double]): Double = ???
 
   def length2[A](as: List[A]): Int = ???
+
+  // Exercise 12
+  // write a reverse function to return a list with elements in reversed order using foldLeft
+
+  def reverse[A](as: List[A]): List[A] = ???
 }
