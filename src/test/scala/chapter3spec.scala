@@ -172,22 +172,22 @@ class chapter3spec extends FunSpec with Matchers {
       }
     }
 
-    describe("reverse") {
+    describe("append2") {
       describe("list of int") {
-        it("should return reversed list") {
-          reverse(chapter3.List(1, 2, 3)) shouldEqual chapter3.List(3, 2, 1)
+        it("should return list with new element at the end") {
+          append2(chapter3.List(1, 2), List(3, 4)) shouldEqual chapter3.List(1, 2, 3, 4)
         }
       }
 
       describe("list of string") {
-        it("should return reversed list") {
-          reverse(chapter3.List("a", "b", "c")) shouldEqual chapter3.List("c", "b", "a")
+        it("should return list with new element at the end") {
+          append2(chapter3.List("a", "b"), chapter3.List("c", "d")) shouldEqual chapter3.List("a", "b", "c", "d")
         }
       }
 
       describe("empty list") {
-        it("should return empty list") {
-          reverse(chapter3.Nil) shouldEqual chapter3.Nil
+        it("should return list of just the new element") {
+          append2(chapter3.Nil, chapter3.List(1, 2, 3)) shouldEqual chapter3.List(1, 2, 3)
         }
       }
     }

@@ -92,5 +92,5 @@ object List {
   // Exercise 14
   // write an append function to add element to end of list using foldLeft
 
-  def append[A](as: List[A], e: A): List[A] = ???
+  def append2[A](l1: List[A], l2:List[A]): List[A] = ???
 }
