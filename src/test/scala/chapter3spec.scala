@@ -171,5 +171,26 @@ class chapter3spec extends FunSpec with Matchers {
         }
       }
     }
+
+    describe("reverse") {
+      describe("list of int") {
+        it("should return reversed list") {
+          reverse(chapter3.List(1, 2, 3)) shouldEqual chapter3.List(3, 2, 1)
+        }
+      }
+
+      describe("list of string") {
+        it("should return reversed list") {
+          reverse(chapter3.List("a", "b", "c")) shouldEqual chapter3.List("c", b", "a")
+        }
+      }
+
+      describe("empty list") {
+        it("should return empty list") {
+          reverse(chapter3.Nil) shouldEqual chapter3.Nil
+        }
+      }
+
+    }
   }
 }

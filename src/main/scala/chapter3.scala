@@ -108,4 +108,9 @@ object List {
 
   def length2[A](as: List[A]): Int =
     foldLeft(as, 0)((acc, _) => acc + 1)
+
+  // Exercise 12
+  // write a reverse function to return a list with elements in reversed order using foldLeft
+
+  def reverse[A](as: List[A]): List[A] = ???
 }
