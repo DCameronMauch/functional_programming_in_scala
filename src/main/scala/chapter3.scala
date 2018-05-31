@@ -90,7 +90,7 @@ object List {
   def reverse[A](as: List[A]): List[A] = ???
 
   // Exercise 14
-  // write an append function to add element to end of list using foldLeft
+  // write an append function to add element to end of list using foldLeft or foldRight
 
   def append2[A](l1: List[A], l2:List[A]): List[A] = ???
 }
