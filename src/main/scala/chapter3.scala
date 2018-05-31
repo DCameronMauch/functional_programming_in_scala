@@ -100,9 +100,12 @@ object List {
   // write a product3 function to multiply together list of double using foldLeft
   // write a length2 function using FoldLeft
 
-  def sum3(ints: List[Int]): Int = ???
+  def sum3(ints: List[Int]): Int =
+    foldLeft(ints, 0)((acc, int) => acc + int)
 
-  def product3(ds: List[Double]): Double = ???
+  def product3(ds: List[Double]): Double =
+    foldLeft(ds, 1.0)((acc, d) => acc * d)
 
-  def length2[A](as: List[A]): Int = ???
+  def length2[A](as: List[A]): Int =
+    foldLeft(as, 0)((acc, _) => acc + 1)
 }
