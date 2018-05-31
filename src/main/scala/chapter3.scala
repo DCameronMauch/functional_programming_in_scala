@@ -88,4 +88,9 @@ object List {
   // write a reverse function to return a list with elements in reversed order using foldLeft
 
   def reverse[A](as: List[A]): List[A] = ???
+
+  // Exercise 14
+  // write an append function to add element to end of list using foldLeft
+
+  def append[A](as: List[A], e: A): List[A] = ???
 }

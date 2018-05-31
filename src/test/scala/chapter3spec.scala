@@ -190,7 +190,6 @@ class chapter3spec extends FunSpec with Matchers {
           reverse(chapter3.Nil) shouldEqual chapter3.Nil
         }
       }
-
     }
   }
 }
