@@ -181,7 +181,7 @@ class chapter3spec extends FunSpec with Matchers {
 
       describe("list of string") {
         it("should return reversed list") {
-          reverse(chapter3.List("a", "b", "c")) shouldEqual chapter3.List("c", b", "a")
+          reverse(chapter3.List("a", "b", "c")) shouldEqual chapter3.List("c", "b", "a")
         }
       }
 
