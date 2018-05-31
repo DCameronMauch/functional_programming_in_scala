@@ -112,5 +112,9 @@ object List {
   // Exercise 12
   // write a reverse function to return a list with elements in reversed order using foldLeft
 
-  def reverse[A](as: List[A]): List[A] = ???
+  def reverse[A](as: List[A]): List[A] =
+    foldLeft(as, Nil:List[A])((acc, e) => e match {
+      case Nil => acc
+      case _ => Cons(e, acc)
+    })
 }
