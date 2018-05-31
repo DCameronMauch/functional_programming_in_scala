@@ -153,7 +153,7 @@ class chapter3spec extends FunSpec with Matchers {
 
       describe("non-empty list") {
         it("should return 6,6") {
-          product3(chapter3.List(1.1, 2.2, 3.3)) shouldEqual 6.6
+          product3(chapter3.List(1.1, 2.2, 3.3)) shouldEqual (7.986 +- 0.0001)
         }
       }
     }
