@@ -93,4 +93,44 @@ object List {
   // write an append function to add element to end of list using foldLeft or foldRight
 
   def append2[A](l1: List[A], l2:List[A]): List[A] = ???
+
+  // Exercise 16
+  // write a addOne function to add 1 to each element of a list of int
+
+  def addOne(l: List[Int]): List[Int] = ???
+
+  // Exercise 17
+  // write a doubleToString function to convert a list of double to list of string
+
+  def doubleToString(l: List[Double]): List[String] = ???
+
+  // Exercise 18
+  // write a generic map function to convert a list of one type to a list of another type
+
+  def map[A,B](as: List[A])(f: A => B): List[B] = ???
+
+  // Exercise 19
+  // write a filter function to removed elements from a list based on a predicate function
+
+  def filter[A](as: List[A])(f: A => Boolean): List[A] = ???
+
+  // Exercise 20
+  // write a flatMap function that maps but flattens a list of list of some type to a list of the type
+
+  def flatMap[A,B](as: List[A])(f: A => List[B]): List[B] = ???
+
+  // Exercise 21
+  // write a filter2 function that uses flatMap
+
+  def filter2[A](as: List[A])(f: A => Boolean): List[A] = ???
+
+  // Exercise 22
+  // write a zip function that creates a list by merging two lists by adding the elements at each given position
+
+  def zip(l1: List[Int], l2: List[Int]): List[Int] = ???
+
+  // Exercise 23
+  // write a more generic zip function that operates on any type and takes a function that does the merge for that type
+
+  def zipWith[A](l1: List[A], l2: List[A], f: (A, A) => A): List[A] = ???
 }
